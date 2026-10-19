@@ -1,1 +1,167 @@
-/* Add styles here. */
+:root {
+     --bg: #f5f7fa;
+     --surface: #ffffff;
+     --text: #1c2430;
+     --muted: #5d6b7c;
+     --border: #d5dce5;
+     --accent: #2457c5;
+     --accent-hover: #1b43a0;
+     --error: #b3261e;
+     --success: #1e7a46;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+          --bg: #12161c;
+          --surface: #1b212a;
+          --text: #e8edf3;
+          --muted: #9aa8b8;
+          --border: #2f3946;
+          --accent: #6c97f0;
+          --accent-hover: #8fb0f5;
+          --error: #f2897f;
+          --success: #6fcf97;
+     }
+}
+
+* {
+     box-sizing: border-box;
+}
+
+body {
+     margin: 0;
+     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+     background: var(--bg);
+     color: var(--text);
+     line-height: 1.5;
+}
+
+.site-header {
+     max-width: 720px;
+     margin: 0 auto;
+     padding: 2rem 1rem 0.5rem;
+     text-align: center;
+}
+
+.site-header h1 {
+     margin: 0 0 0.25rem;
+}
+
+.site-header p {
+     margin: 0;
+     color: var(--muted);
+}
+
+main {
+     max-width: 720px;
+     margin: 0 auto;
+     padding: 1rem;
+     display: grid;
+     gap: 1rem;
+}
+
+.panel {
+     background: var(--surface);
+     border: 1px solid var(--border);
+     border-radius: 8px;
+     padding: 1.25rem;
+}
+
+.panel h2 {
+     margin: 0 0 1rem;
+     font-size: 1.15rem;
+}
+
+label {
+     display: block;
+     margin: 0.75rem 0 0.25rem;
+     font-size: 0.9rem;
+     font-weight: 600;
+}
+
+input {
+     width: 100%;
+     padding: 0.6rem 0.7rem;
+     font: inherit;
+     color: var(--text);
+     background: var(--bg);
+     border: 1px solid var(--border);
+     border-radius: 6px;
+}
+
+input:focus-visible,
+button:focus-visible {
+     outline: 2px solid var(--accent);
+     outline-offset: 2px;
+}
+
+button {
+     margin-top: 1rem;
+     padding: 0.6rem 1.1rem;
+     font: inherit;
+     font-weight: 600;
+     color: #fff;
+     background: var(--accent);
+     border: 0;
+     border-radius: 6px;
+     cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+     button {
+          color: #0b1220;
+     }
+}
+
+button:hover {
+     background: var(--accent-hover);
+}
+
+button:disabled {
+     opacity: 0.6;
+     cursor: wait;
+}
+
+.message {
+     margin: 0.75rem 0 0;
+     font-size: 0.9rem;
+     color: var(--muted);
+}
+
+.message.error {
+     color: var(--error);
+}
+
+.message.success {
+     color: var(--success);
+}
+
+.course-list {
+     list-style: none;
+     margin: 1rem 0 0;
+     padding: 0;
+     display: grid;
+     gap: 0.75rem;
+}
+
+.course-item {
+     padding: 0.85rem 1rem;
+     border: 1px solid var(--border);
+     border-radius: 6px;
+     background: var(--bg);
+}
+
+.course-item h3 {
+     margin: 0 0 0.25rem;
+     font-size: 1.05rem;
+}
+
+.course-item p {
+     margin: 0;
+     font-size: 0.92rem;
+     color: var(--muted);
+}
+
+.course-item strong {
+     color: var(--text);
+     font-weight: 600; }
