@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CS396 - Demo</title>
+	<title>Study Group Finder</title>
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	<header>
+	<header class="site-header">
 		<h1>Study Group Finder</h1>
+		<p> Find someone to study with! </p>
 	</header>
 
 	<main>
-		<p>Here we'll put the search, and posting page.</p>
+		<section class="panel" aria-labelledby="add-heading">
+			<h2 id="add-heading">Add a study session</h2>
+			<form id="course-form" novalidate>
+				<label for="course_name">Course Name</label>
+				<input type="text" id="course_name" name="course_name" placeholder="e.g. CS396" maxlength="100"
+					required>
+				</n>
+				<label for="student_name">Your name</label>
+				<input type="text" id="student_name" name="student_name" placeholder="e.g. Johnny Jones"
+					maxlength="100">
+
+				</n>
+				<label for="availability">When do you want to study?</label>
+				<input type="text" id="availability" name="availability"
+					placeholder="e.g. Monday Oct 20, 3:00 - 5:00" maxlength="200">
+				</n>
+				<button type="submit">Add study session</button>
+				<p id="form-message" class="message" role="status" aria-live="polite"></p>
+			</form>
+		</section>
+
+		<section class="panel" aria-labelledby="find-heading">
+			<h2 id="find-heading">Find people to study with!</h2>
+			<label for="search">Search by course or name</label>
+			<input type="search" id="search" placeholder="Type to filter">
+
+			<ul id="course-list" class="course-list"></ul>
+			<p id="empty-message" class="message" hidden>No session yet. Add the first one above.</p>
+		</section>
 	</main>
 
 	<script src="app.js"></script>
